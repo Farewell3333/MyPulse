@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.example.MainFrame">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="13" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="590" height="1087"/>
+    </constraints>
+    <properties>
+      <background color="-16777216"/>
+      <maximumSize width="500" height="950"/>
+      <preferredSize width="500" height="950"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="51f77" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="500" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Vladimir Script" size="50" style="0"/>
+          <foreground color="-65536"/>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="10"/>
+          <icon value="serce.gif"/>
+          <iconTextGap value="7"/>
+          <text value="MyPulse v1.05"/>
+          <verticalAlignment value="1"/>
+        </properties>
+      </component>
+      <component id="d9c69" class="javax.swing.JButton" binding="button1">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Wpisz recznie pomiary"/>
+        </properties>
+      </component>
+      <component id="86660" class="javax.swing.JButton" binding="button2">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Wczytaj pomiary z pliku"/>
+        </properties>
+      </component>
+      <component id="75b4b" class="javax.swing.JButton" binding="button3">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Wypisz pomiary"/>
+        </properties>
+      </component>
+      <component id="ab64f" class="javax.swing.JButton" binding="button4">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Usun ostatni pomiar"/>
+        </properties>
+      </component>
+      <component id="dcc29" class="javax.swing.JButton" binding="button5">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Usun wszystkie pomiary"/>
+        </properties>
+      </component>
+      <component id="bb4ce" class="javax.swing.JButton" binding="button6">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Srednia z pomiarow"/>
+        </properties>
+      </component>
+      <component id="1ac06" class="javax.swing.JButton" binding="button7">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Mediana z pomiarow"/>
+        </properties>
+      </component>
+      <component id="7f6f6" class="javax.swing.JButton" binding="button8">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Ocen pomiary"/>
+        </properties>
+      </component>
+      <component id="12eaa" class="javax.swing.JButton" binding="button9">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="Zakoncz program"/>
+        </properties>
+      </component>
+      <component id="8545" class="javax.swing.JButton" binding="button10">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="380" height="25"/>
+            <maximum-size width="380" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-65536"/>
+          <borderPainted value="false"/>
+          <focusable value="false"/>
+          <font name="Times New Roman" size="25" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="???"/>
+        </properties>
+      </component>
+      <grid id="6210a" binding="MainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="300"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16777216"/>
+          <visible value="true"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="5384" binding="Output" layout-manager="GridBagLayout">
+            <constraints border-constraint="North"/>
+            <properties>
+              <opaque value="false"/>
+              <preferredSize width="500" height="300"/>
+              <visible value="true"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="95f16" class="javax.swing.JLabel" binding="infoLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <font name="Rage Italic" size="40" style="1"/>
+                  <foreground color="-65536"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <preferredSize width="500" height="300"/>
+                  <text value=""/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="e207f" binding="Input" layout-manager="GridBagLayout">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16777216"/>
+          <maximumSize width="500" height="950"/>
+          <preferredSize width="500" height="200"/>
+          <visible value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="5505" class="javax.swing.JButton" binding="endButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="100" height="25"/>
+              </grid>
+              <gridbag top="0" left="0" bottom="40" right="0" weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <background color="-65536"/>
+              <borderPainted value="false"/>
+              <focusable value="false"/>
+              <font name="Rage Italic" size="25" style="1"/>
+              <foreground color="-16777216"/>
+              <label value="Zakoncz"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <preferredSize width="100" height="40"/>
+              <text value="Zakoncz"/>
+            </properties>
+          </component>
+          <grid id="efc05" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="0" left="0" bottom="0" right="10" weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <preferredSize width="250" height="80"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="f6610" class="javax.swing.JLabel" binding="status">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Rage Italic" size="25" style="1"/>
+                  <foreground color="-65536"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <preferredSize width="100" height="33"/>
+                  <text value=""/>
+                  <verticalAlignment value="0"/>
+                  <verticalTextPosition value="0"/>
+                </properties>
+              </component>
+              <component id="7443f" class="javax.swing.JTextField" binding="inputTextField">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-65536"/>
+                  <focusable value="true"/>
+                  <foreground color="-16777216"/>
+                  <horizontalAlignment value="0"/>
+                  <margin top="3" left="8" bottom="3" right="8"/>
+                  <maximumSize width="250" height="40"/>
+                  <minimumSize width="250" height="40"/>
+                  <preferredSize width="220" height="40"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="36c49" class="javax.swing.JButton" binding="putButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="100" height="25"/>
+              </grid>
+              <gridbag top="0" left="0" bottom="40" right="0" weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <background color="-65536"/>
+              <borderPainted value="false"/>
+              <focusable value="false"/>
+              <font name="Rage Italic" size="25" style="1"/>
+              <foreground color="-16777216"/>
+              <label value="Wpisz"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <preferredSize width="100" height="40"/>
+              <text value="Wpisz"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
