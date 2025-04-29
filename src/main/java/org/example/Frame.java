@@ -2,16 +2,12 @@ package org.example;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.jgoodies.forms.layout.CellConstraints;
-import com.jgoodies.forms.layout.FormLayout;
 
 
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.text.StyleContext;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,7 +17,7 @@ import java.util.Locale;
 import static org.example.Method.addFromField;
 import static org.example.Method.playSound;
 
-public class MainFrame extends JFrame {
+public class Frame extends JFrame {
 
     private JButton button1, button2, button3, button4, button5, button6, button7, button8, button9, button10;
     private JTextField inputTextField;
@@ -31,13 +27,13 @@ public class MainFrame extends JFrame {
     private final LinkedList<Integer> measures = new LinkedList<>();
 
 
-    public MainFrame() {
+    public Frame() {
         setContentPane(mainPanel);
         setTitle("MyPulsev105");
         setSize(500, 950);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setIconImage(new ImageIcon("logo.png").getImage());
+        setIconImage(new ImageIcon("src/main/resources/logo.png").getImage());
 
         inputTextField.setBorder(null);
 
@@ -54,7 +50,7 @@ public class MainFrame extends JFrame {
         button9.addActionListener(e -> System.exit(0));
         button10.addActionListener(e -> {
             JumpingWindows.jump();
-            playSound(new File("aha1.wav"));
+            playSound(new File("src/main/resources/aha1.wav"));
         });
     }
 
@@ -128,7 +124,7 @@ public class MainFrame extends JFrame {
                 tooSmall, normal, tooHigh, Collections.min(measures), Collections.max(measures));
         setLabelText(summary);
     }   public static void main(String[] args) {
-        new MainFrame();
+        new Frame();
 
     }
 

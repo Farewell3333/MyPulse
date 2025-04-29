@@ -69,12 +69,12 @@ public class JumpingWindows extends JFrame {
     static public void jump(){
 
         for (int i = 0; i < 100; i++) {
-            SwingUtilities.invokeLater(() -> new JumpingWindows("1.gif",500,500));
-            SwingUtilities.invokeLater(() -> new JumpingWindows("3.gif",500,500));
-            SwingUtilities.invokeLater(() -> new JumpingWindows("4.gif",500,500));
-            SwingUtilities.invokeLater(() -> new JumpingWindows("5.gif",500,500));
-            SwingUtilities.invokeLater(() -> new JumpingWindows("6.gif",500,500));
-            SwingUtilities.invokeLater(() -> new JumpingWindows("7.gif",500,500));
+            SwingUtilities.invokeLater(() -> new JumpingWindows("src/main/resources/1.gif",500,500));
+            SwingUtilities.invokeLater(() -> new JumpingWindows("src/main/resources/3.gif",500,500));
+            SwingUtilities.invokeLater(() -> new JumpingWindows("src/main/resources/4.gif",500,500));
+            SwingUtilities.invokeLater(() -> new JumpingWindows("src/main/resources/5.gif",500,500));
+            SwingUtilities.invokeLater(() -> new JumpingWindows("src/main/resources/6.gif",500,500));
+            SwingUtilities.invokeLater(() -> new JumpingWindows("src/main/resources/7.gif",500,500));
 
         }
 
