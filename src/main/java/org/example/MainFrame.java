@@ -23,163 +23,118 @@ import static org.example.Method.playSound;
 
 public class MainFrame extends JFrame {
 
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JButton button6;
-    private JButton button7;
-    private JButton button8;
-    private JButton button9;
-    private JButton button10;
-    private JTextField TextField;
-    private JPanel mainPanel;
-    private JPanel MainPanel;
-    private JPanel Input;
-    private JButton endButton;
+    private JButton button1, button2, button3, button4, button5, button6, button7, button8, button9, button10;
     private JTextField inputTextField;
-    private JButton putButton;
-    private JLabel status;
-    private JPanel Output;
-    private JLabel infoLabel;
+    private JPanel mainPanel, Input, Output, MainPanel;
+    private JButton endButton, putButton;
+    private JLabel status, infoLabel;
+    private final LinkedList<Integer> measures = new LinkedList<>();
 
 
     public MainFrame() {
-        LinkedList<Integer> measures = new LinkedList<>();
         setContentPane(mainPanel);
         setTitle("MyPulsev105");
         setSize(500, 950);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setIconImage(new ImageIcon("logo.png").getImage());
+
         inputTextField.setBorder(null);
-        button9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                infoLabel.setVisible(false);
-                Input.setVisible(true);
-            }
-        });
-        putButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (addFromField(inputTextField.getText(), status) > 0)
-                    measures.add(addFromField(inputTextField.getText(), status));
-            }
-        });
-        endButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Input.setVisible(false);
-            }
-        });
-        button3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Input.setVisible(false);
-                setLabelText(measures.toString(), infoLabel);
-            }
-        });
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Input.setVisible(false);
-                setLabelText("Work in progress", infoLabel);
-            }
-        });
-        button4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Input.setVisible(false);
-                setLabelText("Usunieto ostatni pomiar", infoLabel);
-                measures.remove(measures.size() - 1);
-            }
-        });
-        button5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Input.setVisible(false);
-                setLabelText("Usunieto wszystkie pomiary", infoLabel);
-                measures.clear();
-            }
-        });
-        button6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Input.setVisible(false);
-                if (measures.isEmpty()) setLabelText("Tablica jest pusta", infoLabel);
-                else {
-                    Double average = 0.0;
-                    for (Integer measure : measures) {
-                        average += measure;
-                    }
-                    average /= measures.size();
-                    setLabelText("Srednia z pomiarow:" + average, infoLabel);
-                }
-            }
-        });
-        button7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Input.setVisible(false);
-                if (measures.isEmpty()) setLabelText("Tablica jest pusta", infoLabel);
-                else {
-                    LinkedList<Integer> xMeasures = new LinkedList<>(measures);
-                    Double Median = 0.0;
-                    xMeasures.sort(Comparator.naturalOrder());
-                    if (xMeasures.size() % 2 == 0)
-                        Median = (double) ((xMeasures.get(xMeasures.size() / 2 - 1) + xMeasures.get(xMeasures.size() / 2)) / 2);
-                    else Median = (double) (xMeasures.get(xMeasures.size() / 2));
-                    setLabelText("Mediana z pomiarow wynosi " + Median, infoLabel);
-                }
-            }
-        });
-        button8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Input.setVisible(false);
-                String tooSmallMeasures = "";
-                String tooHighMeasures = "";
-                String normalMeasures = "";
-                for (Integer measure : measures) {
-                    if (measure < 60) tooSmallMeasures += " " + measure;
-                    else if (measure < 120) normalMeasures += " " + measure;
-                    else tooHighMeasures += " " + measure;
 
-                }
-                setLabelText("za male pomiary:" + tooSmallMeasures + "\n" + "normalne pomiary:" + normalMeasures + "\n" + "za duze pomiary:" + tooHighMeasures + "\n" + "najmniejszy pomiar:" + Collections.min(measures) + "\n" + "najwiekszy pomiar:" + Collections.max(measures), infoLabel);
-            }
-        });
-        button10.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        button10.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JumpingWindows.jump();
-                playSound(new File("aha1.wav"));
-            }
+        button1.addActionListener(e -> showInputPanel());
+        putButton.addActionListener(e -> addMeasurement());
+        endButton.addActionListener(e -> Input.setVisible(false));
+        button3.addActionListener(e -> setLabelText(measures.toString()));
+        button2.addActionListener(e -> setLabelText("Work in progress"));
+        button4.addActionListener(e -> removeLastMeasurement());
+        button5.addActionListener(e -> clearAllMeasurements());
+        button6.addActionListener(e -> calculateAverage());
+        button7.addActionListener(e -> calculateMedian());
+        button8.addActionListener(e -> evaluateMeasurements());
+        button9.addActionListener(e -> System.exit(0));
+        button10.addActionListener(e -> {
+            JumpingWindows.jump();
+            playSound(new File("aha1.wav"));
         });
     }
 
-    public static void main(String[] args) {
+    private void showInputPanel() {
+        infoLabel.setVisible(false);
+        Input.setVisible(true);
+    }
+
+    private void addMeasurement() {
+        int value = addFromField(inputTextField.getText(), status);
+        if (value > 0) measures.add(value);
+    }
+
+    private void removeLastMeasurement() {
+        if (!measures.isEmpty()) {
+            measures.removeLast();
+            setLabelText("Usunieto ostatni pomiar");
+        } else {
+            setLabelText("Brak pomiarow do usuniecia");
+        }
+    }
+
+    private void clearAllMeasurements() {
+        measures.clear();
+        setLabelText("Usunieto wszystkie pomiary");
+    }
+
+    private void calculateAverage() {
+        if (measures.isEmpty()) {
+            setLabelText("Tablica jest pusta");
+        } else {
+            double average = measures.stream().mapToDouble(Integer::doubleValue).average().orElse(0);
+            setLabelText("Srednia z pomiarow: " + average);
+        }
+    }
+
+    private void calculateMedian() {
+        if (measures.isEmpty()) {
+            setLabelText("Tablica jest pusta");
+        } else {
+            LinkedList<Integer> sorted = new LinkedList<>(measures);
+            sorted.sort(Comparator.naturalOrder());
+            double median;
+            int size = sorted.size();
+            if (size % 2 == 0) {
+                median = (sorted.get(size / 2 - 1) + sorted.get(size / 2)) / 2.0;
+            } else {
+                median = sorted.get(size / 2);
+            }
+            setLabelText("Mediana z pomiarow wynosi: " + median);
+        }
+    }
+
+    private void evaluateMeasurements() {
+        if (measures.isEmpty()) {
+            setLabelText("Tablica jest pusta");
+            return;
+        }
+
+        StringBuilder tooSmall = new StringBuilder();
+        StringBuilder normal = new StringBuilder();
+        StringBuilder tooHigh = new StringBuilder();
+
+        for (Integer m : measures) {
+            if (m < 60) tooSmall.append(m).append(" ");
+            else if (m < 120) normal.append(m).append(" ");
+            else tooHigh.append(m).append(" ");
+        }
+
+        String summary = String.format("za male pomiary: %s\nnormalne pomiary: %s\nza duze pomiary: %s\nnajmniejszy pomiar: %d\nnajwiekszy pomiar: %d",
+                tooSmall, normal, tooHigh, Collections.min(measures), Collections.max(measures));
+        setLabelText(summary);
+    }   public static void main(String[] args) {
         new MainFrame();
 
     }
 
-    private static void setLabelText(String xd, JLabel label) {
-        label.setText("<html>" + xd.replaceAll("\n", "<br>") + "</html>");
-        label.setVisible(true);
+    private void setLabelText(String text) {
+        infoLabel.setText("<html>" + text.replace("\n", "<br>") + "</html>");
+        infoLabel.setVisible(true);
     }
 
     {
